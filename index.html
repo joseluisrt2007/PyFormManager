@@ -54,7 +54,7 @@
   }
   .downloads {
     margin-top: 10px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #333;
   }
 </style>
@@ -65,7 +65,7 @@
     <a class="button" href="https://github.com/joseluisrt2007/PyFormManager/releases/download/v1.0/Py-Form-Manager.exe">
       💾 Descargar Instalador
     </a>
-    <p class="downloads" id="downloadCount">Descargas: cargando...</p>
+    <p class="downloads" id="downloadCount">Descargas desde GitHub: cargando...</p>
     <p class="hash">
       <strong>SHA-256:</strong><br>
       0ff4cb9d5f5f56ef1b770ea2d94185f1c8794bba945a3f809b325a97f700bd89
@@ -73,7 +73,7 @@
   </div>
 
   <script>
-    // Mostrar número aproximado de descargas usando GitHub API
+    // Mostrar número de descargas oficiales desde GitHub
     const owner = "joseluisrt2007";
     const repo = "PyFormManager";
     const tag = "v1.0";
@@ -85,13 +85,13 @@
         const asset = data.assets.find(a => a.name === assetName);
         if(asset) {
           document.getElementById("downloadCount").textContent = 
-            "Descargas: " + asset.download_count.toLocaleString();
+            "🚀 Descargas desde GitHub: " + asset.download_count.toLocaleString();
         } else {
-          document.getElementById("downloadCount").textContent = "Descargas: 0";
+          document.getElementById("downloadCount").textContent = "🚀 Descargas desde GitHub: 0";
         }
       })
       .catch(err => {
-        document.getElementById("downloadCount").textContent = "Descargas: N/A";
+        document.getElementById("downloadCount").textContent = "🚀 Descargas desde GitHub: N/A";
         console.error(err);
       });
   </script>
